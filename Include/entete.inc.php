@@ -38,7 +38,4 @@
       </ul>
     </div>
     <!-- fin div gauche -->
-    <div id="droite"></div>
-    <!-- fin div droite -->
-  </body>
-</html>
+    <div id="droite">

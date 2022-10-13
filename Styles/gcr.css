@@ -1,0 +1,53 @@
+body {
+  background-color: white;
+  color: #5599EE;
+}
+label.titre  {
+    width: 180px;
+    clear: left;
+    float: left;
+}
+.zoneMEDIC {
+    width: 30px;
+    float: left;
+    color: #7091BB;
+}
+.zonePRATI {
+    width: 300px;
+    float: left;
+    color: white;
+}
+.zoneRAP{
+    width: 30px;
+    float: left;
+    color: #5599EE;
+}
+.zoneVISIT{
+    width: 30px;
+    float: left;
+    color: #7091BB;
+}
+#haut {
+  margin: 2px 2px 2px 2px;
+  height: 6%;
+}
+
+#gauche {
+  float: left;
+  width: 18%;
+  background-color: white;
+  height: 100%;
+}
+
+#droite {
+  float: left;
+  width: 80%;
+}
+
+#bas {
+  margin: 10px 2px 2px 2px;
+  clear: left;
+  background-color: #77aadd;
+  color: white;
+  height: 88%;
+}
