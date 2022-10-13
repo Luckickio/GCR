@@ -15,7 +15,6 @@ function formSelectDepuisRecordset($label, $name, $id, $jeuEnregistrement, $vale
     $codeForm .= "</select>";
     return $codeForm; 
 }
-
 function formInputText($nomLabel, $nomInput, $idInput, $valeurInput, $tailleInput, $longMaxInput, $tabIndex, $lectureSeuleInput) {
     $codeForm = "<label class=\"titre\" for=\"" . $idInput . "\">" . $nomLabel . " :" . "</label>" . "\n" .
                 "\t" . "<input type=\"text\" id=\"". $idInput ."\" value=\"" . $valeurInput . "\" size=\"" . $tailleInput . "\" maxlength=\"" . $longMaxInput . "\" name=\"" . $nomInput . "\" class=\"zonePRATI\"" .

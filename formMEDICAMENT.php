@@ -13,16 +13,16 @@
         <li>Comptes-Rendus</li>
         <li>
           <ul>
-            <li><a href="formRAPPORT_VISITE.php">Nouveaux</a></li>
+          <li><a href="index.php?action=10">Nouveaux</a></li>
             <li>Consulter</li>
           </ul>
         </li>
         <li>Consulter</li>
         <li>
           <ul>
-            <li><a href="formMEDICAMENT.php">Médicaments</a></li>
-            <li><a href="formPRATICIEN.php">Praticiens</a></li>
-            <li><a href="formVISITEUR.php">Autres visiteurs</a></li>
+            <li><a href="index.php?action=20">Médicaments</a></li>
+            <li><a href="index.php?action=30">Praticiens</a></li>
+            <li><a href="index.php?action=40">Autres visiteurs</a></li>
           </ul>
         </li>
       </ul>

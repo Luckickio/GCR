@@ -22,8 +22,7 @@ require_once 'Include/Bibliotheque01.inc.php';
 				echo formInputText("ADRESSE", "txtAdresse", "txtAdresse", $item["pra_adresse"], 50, 100, 3, True);
 				echo formInputText("VILLE", "txtVille", "txtVille", $item["pra_ville"], 50, 100, 3, True);
 				echo formInputText("COEF NOTORIÉTÉ", "txtCoef", "txtCoef", $item["pra_coef"], 50, 100, 3, True);
-				echo formInputText("LIEU D'EXERCICE", "txtLieu", "txtLieu", $item["typ_lieu"], 50, 100, 3, True);
-				
+				echo formInputText("LIEU D'EXERCICE", "txtLieu", "txtLieu", $item["typ_lieu"], 50, 100, 3, True);				
 			}
 			?>	
 		</form>

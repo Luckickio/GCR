@@ -18,6 +18,5 @@ function chercher($pNumero) {
    xhr_object.open("POST", "cherchePraticien.php", true); 
    xhr_object.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); 
    var data = "pratNum=" + $pNumero ;
-   xhr_object.send(data); 
-   
+   xhr_object.send(data);  
 }
