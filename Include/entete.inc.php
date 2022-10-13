@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="Styles/gcr.css" />
   </head>
   <body>
+    <script src="JavaScript/GCRAjax.js"></script>
     <div id="haut">
       <h1>
         <img

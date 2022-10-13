@@ -1,31 +1,36 @@
 body {
   background-color: white;
-  color: #5599EE;
+  color: #5599ee;
 }
-label.titre  {
-    width: 180px;
-    clear: left;
-    float: left;
+.titre {
+  width: 180px;
+  clear: left;
+  float: left;
+  display: inline-block;
+  margin-top: 10px;
 }
 .zoneMEDIC {
-    width: 30px;
-    float: left;
-    color: #7091BB;
+  width: 30px;
+  float: left;
+  color: #7091bb;
+  width: 20%;
 }
 .zonePRATI {
-    width: 300px;
-    float: left;
-    color: white;
+  width: 300px;
+  float: left;
+  color: #7091bb;
+  margin-top: 10px;
+  padding-left: 20px;
 }
-.zoneRAP{
-    width: 30px;
-    float: left;
-    color: #5599EE;
+.zoneRAP {
+  width: 30px;
+  float: left;
+  color: #5599ee;
 }
-.zoneVISIT{
-    width: 30px;
-    float: left;
-    color: #7091BB;
+.zoneVISIT {
+  width: 30px;
+  float: left;
+  color: #7091bb;
 }
 #haut {
   margin: 2px 2px 2px 2px;
@@ -50,4 +55,6 @@ label.titre  {
   background-color: #77aadd;
   color: white;
   height: 88%;
+  padding-left: 19px;
+  padding-bottom: 19px;
 }
