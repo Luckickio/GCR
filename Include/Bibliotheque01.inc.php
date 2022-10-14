@@ -15,11 +15,25 @@ function formSelectDepuisRecordset($label, $name, $id, $jeuEnregistrement, $vale
     $codeForm .= "</select>";
     return $codeForm; 
 }
-function formInputText($nomLabel, $nomInput, $idInput, $valeurInput, $tailleInput, $longMaxInput, $tabIndex, $lectureSeuleInput) {
-    $codeForm = "<label class=\"titre\" for=\"" . $idInput . "\">" . $nomLabel . " :" . "</label>" . "\n" .
-                "\t" . "<input type=\"text\" id=\"". $idInput ."\" value=\"" . $valeurInput . "\" size=\"" . $tailleInput . "\" maxlength=\"" . $longMaxInput . "\" name=\"" . $nomInput . "\" class=\"zonePRATI\"" .
+function formInputText($nomLabel, $nomInput, $id, $valeurInput, $tailleInput, $longMaxInput, $tabIndex, $lectureSeuleInput) {
+    $codeForm = "<label class=\"titre\" for=\"" . $id . "\">" . $nomLabel . " :" . "</label>" . "\n" .
+                "\t" . "<input type=\"text\" id=\"". $id ."\" value=\"" . $valeurInput . "\" size=\"" . $tailleInput . "\" maxlength=\"" . $longMaxInput . "\" name=\"" . $nomInput . "\" class=\"zonePRATI\"" .
                 ($lectureSeuleInput == True ? " readonly=\"readonly\"" : "") . " tabindex=\"" . $tabIndex . "\" />" . "\n" .
                 "<br>" . "\n" . "<br>" . "\n";
     return $codeForm;
 }
+function formBoutonSubmit($nomBouton, $idBouton, $valeurBouton, $tabIndexBouton) {
+    $codeBoutonSubmit = "<input type=\"submit\" value=\"" . $valeurBouton . "\" name=\"" . $nomBouton .  "\" id=\"" . $idBouton . "\" tabindex=\"" . $tabIndexBouton . "\" />" . "\n";
+    return $codeBoutonSubmit;
+}
+function formInputHidden($nomText, $idText, $valeurText){
+    $codeInputHidden = "<input type=\"hidden\" value=\"" . $valeurText . "\" name=\"" . $nomText .  "\" id=\"" . $idText . "\" />" . "\n";
+    return $codeInputHidden;
+}
+function formTextArea($label, $nom, $id, $valeur, $largeur, $hauteur, $longMax, $tabIndex, $lectureSeule){
+    $CodeTextArea = "<label for=\"" . $id . "\">" . $label . " :" . "</label>" . "\n" .
+                    "\t" . "<textarea id=\"" . $id ."\" name=\"" . $nom . "\" cols=\"" . $largeur . "\" rows=\"" . $hauteur . "\" tabindex=\"". $tabIndex . "\" maxlength=\"" . $longMax . "\"" .
+                    ($lectureSeule == True ? " readonly=\"readonly\"" : "") . ">" . $valeur . "</textarea>" . "\n" . "<br>" . "\n";
+    return $CodeTextArea;
+} 
 ?>

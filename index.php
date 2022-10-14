@@ -13,6 +13,12 @@ switch ($_REQUEST["action"]) {
     case 20:
         require_once "formMEDICAMENT.php";
         break;
+    case 21:
+        require_once "formMEDICAMENT.php";
+        break;
+    case 22:
+        require_once "formMEDICAMENT.php";
+        break;
     case 30:
         require_once "formPRATICIEN.php";
         break;

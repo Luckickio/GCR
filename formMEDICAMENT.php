@@ -30,18 +30,53 @@
 <!-- fin div gauche -->
 <div id="droite" >
 	<div id="bas" >
-	<form name="formMEDICAMENT" method="post" action="recupMEDICAMENT.php">
-		<h1> Pharmacopee </h1>
-		<label class="titre">DEPOT LEGAL :</label><input type="text" size="10" name="MED_DEPOTLEGAL" class="zoneMEDIC" />
-		<label class="titre">NOM COMMERCIAL :</label><input type="text" size="25" name="MED_NOMCOMMERCIAL" class="zoneMEDIC" />
-		<label class="titre">FAMILLE :</label><input type="text" size="3" name="FAM_CODE" class="zoneMEDIC" />
-		<label class="titre">COMPOSITION :</label><textarea rows="5" cols="50" name="MED_COMPOSITION" class="zoneMEDIC" ></textarea>
-		<label class="titre">EFFETS :</label><textarea rows="5" cols="50" name="MED_EFFETS" class="zoneMEDIC" ></textarea>
-		<label class="titre">CONTRE INDIC. :</label><textarea rows="5" cols="50" name="MED_CONTREINDIC" class="zoneMEDIC" ></textarea>
-		<label class="titre">PRIX ECHANTILLON :</label><input type="text" size="7" name="MED_PRIXECHANTILLON" class="zoneMEDIC" />
-		<label class="titre">&nbsp;</label><input class="zoneMEDIC" type="button" value="<"></input><input class="zoneMEDIC" type="button" value=">"></input>
-	</form>
-	</div>
+    <?php
+    require_once "Include/SourceDonnees.inc.php";
+    require_once "Include/Bibliotheque01.inc.php";
+    echo "<h1>Pharmacopée</h1>";
+    switch ($_REQUEST["action"]) {
+      case 20:
+        echo "<form id=\"formChoixFamilleMedicaments\" method=\"POST\" action=\"index.php?action=21\">";
+        $valDefaut = (isset($_REQUEST["cfMedicament"])) ? $_REQUEST["cfMedicament"] : null;
+        echo formSelectDepuisRecordset("Famille", "cfMedicament", "cfMedicament", getChoixFamilleMedicament(), $valDefaut, 1);
+        echo formBoutonSubmit("EnvoicfMedicament", "EnvoicfMedicament","OK", 1);
+        echo "</form>";
+        break;
+      case 21:
+        echo "<form id=\"formChoixFamilleMedicaments\" method=\"POST\" action=\"index.php?action=21\">";
+        $valDefaut = (isset($_REQUEST["cfMedicament"])) ? $_REQUEST["cfMedicament"] : null;
+        echo formSelectDepuisRecordset("Famille", "cfMedicament", "cfMedicament", getChoixFamilleMedicament(), $valDefaut, 1);
+        echo formBoutonSubmit("EnvoicfMedicament", "EnvoicfMedicament", "OK", 1);
+        echo "</form>";
+        echo "<form id=\"formChoixMedicament\" method=\"POST\" action=\"index.php?action=22\">";
+        $valDefaut = (isset($_REQUEST["cMedicament"])) ? $_REQUEST["cMedicament"] : null;
+        echo formSelectDepuisRecordset("Medicament", "cMedicament", "cMedicament", getMedicament($_REQUEST["cfMedicament"]), $valDefaut, 2);
+        echo formBoutonSubmit("EnvoicMedicament", "EnvoicMedicament", "OK", 2);
+        echo formInputHidden("familleCache", "familleCache", $_REQUEST["cfMedicament"]);
+        echo "</form>";
+        break;
+      case 22:
+        echo "<form id=\"formChoixFamilleMedicaments\" method=\"POST\" action=\"index.php?action=21\">";
+        echo formSelectDepuisRecordset("Famille", "cfMedicament", "cfMedicament", getChoixFamilleMedicament(), $_REQUEST["familleCache"], 1);
+        echo formBoutonSubmit("EnvoicfMedicament", "EnvoicfMedicament","OK", 1);
+        echo "</form>";
+        echo "<form id=\"formChoixMedicament\" method=\"POST\" action=\"index.php?action=22\">";
+        echo formSelectDepuisRecordset("Medicament", "cMedicament", "cMedicament", getMedicament($_REQUEST["familleCache"]), $_REQUEST["cMedicament"], 2);
+        echo formInputHidden("familleCache", "familleCache", $_REQUEST["familleCache"]);
+        echo formBoutonSubmit("EnvoicMedicament", "EnvoicMedicament", "OK", 2);
+        echo "</form>";
+        echo "<form id=\"formMedicament\" method=\"POST\" action=\"index.php?action=22\">";
+        getFicheMedicament($_REQUEST["cMedicament"])->setFetchMode(PDO::FETCH_ASSOC);
+        $item = getFicheMedicament($_REQUEST["cMedicament"])->fetch();
+        echo formTextArea("Composition", "composition", "composition", $item["med_compo"], 70, 5, 255, 3, True);
+        echo formTextArea("Effets", "effets", "effets", $item["med_effets"], 70, 5, 255, 3, True);
+        echo formTextArea("ContreIndic", "contreindic", "contreindic", $item["med_contreindic"], 70, 5, 255, 3, True);
+        echo formTextArea("Laboratoire", "laboratoire", "laboratoire", $item["lab_nom"], 70, 5, 255, 3, True);
+        echo "</from>";
+        break;
+    }
+    ?>
+<!-- zoneMedic -->
 	<!-- fin div bas -->
 </div>
 <!-- fin div droite -->

@@ -9,8 +9,8 @@ require_once 'Include/Bibliotheque01.inc.php';
 			<?php
 			$valDefaut = (isset($_REQUEST["lstPrat"])) ? $_REQUEST["lstPrat"] : 0 ;
 			echo formSelectDepuisRecordset("Praticien", "lstPrat", "listPraticien", getListePraticiens(), $valDefaut, 1); 
+			echo formBoutonSubmit("btnSubmit", "btnSubmit", "Ok", 2);
 			?>
-			<input type="submit" name="btnSubmit" id="btnSubmit" value="Ok" tabindex="2"/>	
 		</form>
 		<form id="formPraticien">
 			<?php

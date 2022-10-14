@@ -10,7 +10,7 @@ body {
   margin-top: 10px;
 }
 .zoneMEDIC {
-  width: 30px;
+  width: 300px;
   float: left;
   color: #7091bb;
   width: 20%;
@@ -57,4 +57,32 @@ body {
   height: 88%;
   padding-left: 19px;
   padding-bottom: 19px;
+}
+
+#formMedicament {
+  padding-top: 10px;
+}
+
+#formPraticien,
+#formMedicament {
+  padding-left: 20px;
+}
+
+#formPraticien label,
+#formMedicament label {
+  display: inline-block;
+  width: 20%;
+}
+
+#formPraticien input,
+#formMedicament input,
+#formMedicament textarea {
+  margin-top: 10px;
+}
+
+label,
+textarea {
+  /* textarea comme input est par défaut en inline-block. */
+  display: inline-block;
+  vertical-align: middle;
 }
