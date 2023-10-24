@@ -19,6 +19,17 @@
     </div>
     <!-- fin div haut -->
     <div id="gauche">
+      <?php
+      // require_once "SourceDonnees.inc.php";
+      // require_once "Securite.inc.php"; 
+      // echo $_SESSION["UtilPrenom"];
+      // echo "<br/>";
+      // echo $_SESSION["UtilNom"];
+      // echo "<br/>";
+      // echo $_SESSION["UtilRole"];
+      // echo "<br/>";
+      // echo $_SESSION["UtilRegion"];
+      // ?>
       <h2>Outils</h2>
       <ul>
         <li>Comptes-Rendus</li>
@@ -35,6 +46,7 @@
             <li><a href="index.php?action=30">Praticiens</a></li>
             <li><a href="index.php?action=40">Autres visiteurs</a></li>
           </ul>
+          <li><a href="index.php?action=50">Fermer la session</a></li>
         </li>
       </ul>
     </div>

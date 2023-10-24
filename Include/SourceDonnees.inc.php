@@ -35,5 +35,28 @@ function getFicheMedicament($medicament) {
     $resultat = SGBDConnect()->query($requete);
     return $resultat;
 }
-?>
-
+function getInfoUtilisateur($utilisateur) {
+    $requete = "SELECT vis_nom, vis_prenom, vis_adresse, vis_cp, vis_ville, vis_datemb, vis_lab FROM visiteur WHERE vis_code =\"" . $utilisateur ."\" ;";
+    $resultat = SGBDConnect()->query($requete);
+    return $resultat;
+}
+function getInfoUser($UtilId) {
+    $requete = "SELECT vis_prenom, vis_nom, tra_role, reg_nom FROM visiteur INNER JOIN travail ON visiteur.vis_code = travail.tra_vis INNER JOIN region ON  travail.tra_reg = region.reg_code WHERE tra_vis = $UtilId AND tra_dataff = (SELECT MAX(tra_dataff) FROM travail WHERE tra_vis = $UtilId";
+    $resultat = SGBDConnect()->query($requete)->fetch(PDO::FETCH_ASSOC);
+    return $resultat;
+}
+function getInfosPraticien2($TypePraticien, $RegionPraticien) {
+    $requete = "SELECT pra_nom, pra_prenom, pra_adresse, pra_coef, type_praticien.typ_lieu, pra_ville FROM praticien INNER JOIN type_praticien ON praticien.pra_type = type_praticien.typ_code WHERE praticien.PRA_TYPE = \"".  $TypePraticien . "\"  AND praticien.PRA_ZONE = \"" .  $RegionPraticien . "\";";
+    $resultat = SGBDConnect()->query($requete);
+    return $resultat;
+}
+function getListTypePraticien() {
+    $requete = "SELECT DISTINCT pra_type, type_praticien.TYP_LIBELLE FROM praticien INNER JOIN type_praticien ON pra_type = type_praticien.TYP_CODE ORDER BY pra_type ASC;";
+    $resultat = SGBDConnect()->query($requete);
+    return $resultat;
+}
+function getListRegionPraticien() {
+    $requete = "SELECT DISTINCT pra_zone, region.REG_NOM FROM praticien INNER JOIN region ON pra_zone = region.REG_CODE ORDER BY pra_zone ASC;";
+    $resultat = SGBDConnect()->query($requete);
+    return $resultat;
+}

@@ -25,6 +25,7 @@
             <li><a href="index.php?action=40">Autres visiteurs</a></li>
           </ul>
         </li>
+        <li><a href="index.php?action=50">Fermer la session</a></li>
       </ul>
     </div>
 <!-- fin div gauche -->

@@ -9,8 +9,8 @@ require_once 'Include/Bibliotheque01.inc.php';
 			<?php
 			$valDefaut = (isset($_REQUEST["lstPrat"])) ? $_REQUEST["lstPrat"] : 0 ;
 			echo formSelectDepuisRecordset("Praticien", "lstPrat", "listPraticien", getListePraticiens(), $valDefaut, 1); 
-			echo formBoutonSubmit("btnSubmit", "btnSubmit", "Ok", 2);
 			?>
+			<input type="submit" name="btnSubmit" id="btnSubmit" value="Ok" tabindex="2"/>	
 		</form>
 		<form id="formPraticien">
 			<?php
@@ -22,7 +22,8 @@ require_once 'Include/Bibliotheque01.inc.php';
 				echo formInputText("ADRESSE", "txtAdresse", "txtAdresse", $item["pra_adresse"], 50, 100, 3, True);
 				echo formInputText("VILLE", "txtVille", "txtVille", $item["pra_ville"], 50, 100, 3, True);
 				echo formInputText("COEF NOTORIÉTÉ", "txtCoef", "txtCoef", $item["pra_coef"], 50, 100, 3, True);
-				echo formInputText("LIEU D'EXERCICE", "txtLieu", "txtLieu", $item["typ_lieu"], 50, 100, 3, True);				
+				echo formInputText("LIEU D'EXERCICE", "txtLieu", "txtLieu", $item["typ_lieu"], 50, 100, 3, True);
+				
 			}
 			?>	
 		</form>
